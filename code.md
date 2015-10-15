@@ -1,5 +1,4 @@
-# Web-Calcs-Genomics
-def diaf():  #converts values from diameter to area
+def diaf():  
 	return (3.14*(int(input())/2)**2)
 print("Enter plate diameter")
 dia1=diaf()
@@ -21,8 +20,7 @@ print("Volume is:",vol)
 print("PFUmaxweb is:",pfum)
 
 print()
-def conv(): #Converts the volumes to vaules between 10-100, there's prob an easier way to do this....
-    
+def conv(): 
     if vol<10**-12:
         vol2=vol*10**14
         print(vol2,"mL","From -14")
@@ -89,5 +87,5 @@ print("X4")
 vol=vol*2
 tf=conv()
 
-vol=vol/4 #converts the vol value back to its original if needed again
+vol=vol/4 
 
