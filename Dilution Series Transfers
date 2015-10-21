@@ -1,0 +1,151 @@
+iti=float(input("initial volume of all tubes"))
+y=100 #placeholder value for variable from other code
+zpre=float(input("standard transfer amount"))
+znext=0
+def finv(y): #checks a tube to see if it is negative or postive
+	finv1=iti-y-znext+zpre
+	return finv1
+        
+def volt(): #changes the added volume to make the final volume positive
+	if finv(y)<=-100:
+		zx=zpre+105
+		print("+105")
+	elif finv(y)<=-95:
+		zx=zpre+100
+		print("+100")
+	elif finv(y)<=-85:
+		zx=zpre+90
+		print("+90")
+	elif finv(y)<=-80:
+		zx=zpre+85
+		print("+85")
+	elif finv(y)<=-75:
+		zx=zpre+80
+		print("+80")
+	elif finv(y)<=-70:
+		zx=zpre+75
+		print("+75")
+	elif finv(y)<=-65:
+		zx=zpre+70
+		print("+70")
+	elif finv(y)<=-60:
+		zx=zpre+65
+		print("+65")
+	elif finv(y)<=-55:
+		zx=zpre+60
+		print("+60")
+	elif finv(y)<=-50:
+		zx=zpre+55
+		print("+55")
+	elif finv(y)<=-45:
+		zx=zpre+50
+		print("+50")
+	elif finv(y)<=-40:
+		zx=zpre+45
+		print("+45")
+	elif finv(y)<=-35:
+		zx=zpre+40
+		print("+40")
+	elif finv(y)<=-30:
+		zx=zpre+35
+		print("+35")
+	elif finv(y)<=-25:
+		zx=zpre+30
+		print("+30")
+	elif finv(y)<=-20:
+		zx=zpre+25
+		print("+25")
+	elif finv(y)<=-15:
+		zx=zpre+20
+		print("+20")
+	elif finv(y)<=-10:
+		zx=zpre+15
+		print("+15")
+	elif finv(y)<=-5:
+		zx=zpre+10
+		print("+10")
+	elif finv(y)<=0:
+		zx=zpre+5
+		print("+5")
+	else:
+		zx=zpre
+		print("+0")
+	return zx
+
+def finvf(): #final volume after changes
+        finv1=iti-y-znext+volt()
+        return finv1
+
+#will display list of transfer volumes at each dilution
+print("Dilution -12")
+print(volt(),"volt #1?")
+print(finvf(),"finvf")
+znext=volt()
+y=65
+finv(y)
+print(finv(y),"finv")
+
+print("Dilution -11")
+print(volt(),"volt")
+print(finvf(),"finvf")
+znext=volt()
+y=95
+finv(y)
+print(finv(y),"finv")
+print(volt(),"volt")
+
+print("Dilution -10")
+znext=volt()
+y=74
+finv(y)
+
+print("Dilution -9")
+znext=volt()
+y=5
+finv(y)
+
+print("Dilution -8")
+znext=volt()
+y=0
+finv(y)
+
+print("Dilution -7")
+znext=volt()
+y=0
+finv(y)
+
+print("Dilution -6")
+znext=volt()
+y=70
+finv(y)
+
+print("Dilution -5")
+znext=volt()
+y=55
+finv(y)
+print(finvf(),"finvf")
+
+print("Dilution -4")
+znext=volt()
+y=2
+finv(y)
+
+print("Dilution -3")
+znext=volt()
+y=9
+finv(y)
+
+print("Dilution -2")
+znext=volt()
+y=8
+finv(y)
+
+print("Dilution -1")
+znext=volt()
+y=32
+finv(y)
+
+print("Dilution 0")
+znext=volt()
+y=100
+finv(y)
