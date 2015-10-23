@@ -1,95 +1,108 @@
+import math
 def diaf():
-	return (3.14*(int(input())/2)**2)
+	return (math.pi*(float(input())/2)**2) #function takes diameter values and converts them to area
 print("Enter plate diameter mm")
 dia1=diaf()
 print("Enter plaque diameter mm")
 dia2=diaf()
 print("Enter volume added uL")
-sola=int(input())
+sola=float(input())
 print("Enter dilution factor exponent")
-dfac=int(input())
+dfac=float(input())
 print("Enter #PFU")
-pfu=int(input())
+pfu=float(input())
 
-pfum=dia1/dia2
-titer=(((pfu/sola)*1000)*10**abs(dfac))
-vol=pfum/titer
+pfum=dia1/dia2  #Maxweb calc
+titer=(((pfu/sola)*1000)*10**abs(dfac)) #titer calc
+vol=(pfum/titer)
 print()
-print("Titer is:",titer)
+print("Titer is:","{:.4E}".format(titer))
 print()
-print("Volume is:",vol,"mL")
+print("Volume is:","{:.4E}".format(vol),"mL")
+print("Volume is:","{:.4E}".format(vol*1000),"uL")
 print()
-print("PFUmaxweb is:",pfum)
+print("PFUmaxweb is:","{:.4E}".format(pfum))
 
-def conv():
+def conv(): #converts mL volumes into uL volumes between 100-10 and the dilution to pull from
     
     if vol<10**-12:
         vol2=vol*10**14
-        print(vol2,"mL","From -12")
+        print(vol2,"uL","From -11")
     elif vol<10**-11:
         vol2=vol*10**13
-        print(vol2,"mL","From -11")
+        print(vol2,"uL","From -10")
     elif vol<10**-10:
         vol2=vol*10**12
-        print(vol2,"mL","From -10")
+        print(vol2,"uL","From -9")
     elif vol<10**-9:
         vol2=vol*10**11
-        print(vol2,"mL","From -9")
+        print(vol2,"uL","From -8")
     elif vol<10**-8:
         vol2=vol*10**10
-        print(vol2,"mL","From -8")
+        print(vol2,"uL","From -7")
     elif vol<10**-7:
         vol2=vol*10**9
-        print(vol2,"mL","From -7")
+        print(vol2,"uL","From -6")
     elif vol<10**-6:
         vol2=vol*10**8
-        print(vol2,"mL","From -6")
+        print(vol2,"uL","From -5")
     elif vol<10**-5:
         vol2=vol*10**7
-        print(vol2,"mL","From -5")
+        print(vol2,"uL","From -4")
     elif vol<10**-4:
         vol2=vol*10**6
-        print(vol2,"mL","From -4")
+        print(vol2,"uL","From -3")
     elif vol<10**-3:
         vol2=vol*10**5
-        print(vol2,"mL","From -3")
+        print(vol2,"uL","From -2")
     elif vol<10**-2:
         vol2=vol*10**4
-        print(vol2,"mL","From -2")
+        print(vol2,"uL","From -1")
     elif vol<10**-1:
         vol2=vol*10**3
-        print(vol2,"mL","From -1")
+        print(vol2,"uL","From 0")
     else:
         vol<10**0
         vol2=vol*10**2
-        print(vol2,"mL","From 0")
-   
+        print(vol2,"uL","From 1")
+   #data reporting below
 print()
 print("Volumes by Web")
 print()
 print("/4")
 vol=vol/4
-div4=conv()
+conv()
+div4=vol
 
 print("/2")
 vol=vol*2
-div2=conv()
+conv()
+div2=vol
 
 print("Maxweb")
 vol=vol*2
-mw=conv()
+conv()
+mw=vol
 
 print("X2")
 vol=vol*2
-tt=conv()
+conv()
+tt=vol
 
 print("X4")
 vol=vol*2
-tf=conv()
+conv()
+tf=vol
 
 vol=vol/4
 
 print()
-print("Press Enter to exit")
+print("Press Enter to go to Dilution calcs")
 input()
 
+#I've got each volume set as their own varaiables.
+#I need to figure out how to assign them tags to go into the right place later.
+#Also need to do testing for low titers,mostly been testing high types.
+#feel like the convereter is gonna get screwy at higher values.
+# right now it assumes you'll pull from atmost 10**0, prob fine
+#if the titer is that low, the sample is kinda garbage.
