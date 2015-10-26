@@ -1,12 +1,7 @@
 # Web-Calcs-Genomics
 
-code is the file for Plate Max web calcs, what it is trying to do is find the needed concentration of sample to create a fully occupied plate
-the other file, dilution calcs, will take the volume values from the code file and determine the dilution tube values needed to create the dilution sereies to create the web plate. Words, science lack of explanation.
+File labeled "code" contains a python script for use in determining a plaque maxWeb plate, the titer of a phage sample, and the needed volume of a dilution to create a maxWeb plate. This script was written while parcipitating the HHMI Sea Phages program. The script will prompt for imputs of plate diameter, plaque diamter, the volume added to the culture that was plated, and the number of PFU. It will take this data and display the volumes in mL and uL needed for maxWeb, the titer, the PFU maxWeb and the volumes needed for /4, /2, MaxWeb, x2, and x4 that the empirical test protocol suggests plating. 
 
+Will probally edit the script so that the user can select what they wish to do. For example, if you already know your titer and want to find MaxWeb without entering everything over again. 
 
-So these phage make these circles called plaques. And I want a plate full of nothing but circles. the code file, tells me what concentration of phage to pipette to make the full circle  plate.
-
-Problem is I got those tubes right, a series of tubes. All in a row. 10**0, 10**-1 etc. And each tube is a power dilution lower than the other. So I gotta pull the right volume out of the right tube. Also I have to make sure I have enough stuff in the tube to put it in all the places I have to put it. 
-
-I'll put this into better words, at a later date. Mabye even explain whats happening! 
-I'm glad nobody important will read this. You know, like my professor.
+The file "dilution calcs" is a WIP that would take the preivious script and use its data to produce the volumes needed to be transfered to have enought sample in each dilution tube to produce an empirical maxWeb test. The code itself is fine and does what it should, however, the sample to culture amounts need to be manually entered. THis would be automated when the two files are merged. 
